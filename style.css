@@ -1,0 +1,347 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html, body {
+    /* height:auto; */
+    /* min-height:100%; */
+        height: 100%;
+
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    /* height:100vh; */
+    overflow:hidden; 
+}
+
+/* MAIN LAYOUT */
+.main-wrapper{
+    display:grid;
+    grid-template-columns: 1fr 1.3fr;
+    /* min-height:100vh; */
+    height:100vh;
+}
+
+@media(max-width:992px){
+    .main-wrapper{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* LEFT BRAND PANEL (FIXED) */
+.brand-panel{
+    /* flex:1; */
+    background:linear-gradient(135deg,#00b2a8,#007d75);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 40px;
+    position:sticky;
+    top:0;
+    height:100vh;
+}
+
+.brand-content{
+    text-align:center;
+    max-width:350px;
+}
+
+.brand-logo{
+    max-width:170px;
+    margin-bottom:30px;
+}
+
+.brand-content h1{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.brand-content p{
+    font-size:15px;
+    line-height:1.6;
+    opacity:0.95;
+}
+
+@media (max-width: 992px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .main-wrapper {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .brand-panel {
+        height: auto;
+    }
+
+    .form-panel {
+        height: auto;
+        overflow: visible;
+    }
+}
+
+/* RIGHT FORM PANEL (SCROLLABLE) */
+.form-panel{
+    /* flex:1.3; */
+    background:#ffffff;
+    height:100vh;
+    overflow-y:auto;
+    padding:60px 60px 80px 60px;
+}
+
+/* FORM CARD */
+.form-card{
+    width:100%;
+    max-width:750px;
+    margin:auto;
+}
+
+/* FORM TITLE */
+.form-title{
+    font-size:26px;
+    margin-bottom:30px;
+    font-weight:700;
+    color:#222;
+}
+
+/* SECTION TITLE */
+.form-section-title{
+   font-size:13px;
+    font-weight:700;
+    color:#00b2a8;
+    margin:40px 0 18px 0;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+}
+
+/* GRID */
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap:35px;
+    row-gap:22px;
+}
+
+.form-grid-single{
+    display:grid;
+    grid-template-columns:1fr;
+    row-gap:20px;
+}
+
+/* INPUTS */
+.form-grid input,
+.form-grid select,
+.form-grid-single textarea{
+    width:100%;
+    padding:14px 16px;
+    border-radius:8px;
+    border:1px solid #e1e1e1;
+    font-size:14px;
+    background:#fafafa;
+    transition:0.2s ease;
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.form-grid-single textarea:focus{
+    border-color:#00b2a8;
+    box-shadow:0 0 0 3px rgba(0,178,168,0.15);
+    outline:none;
+    background:white;
+}
+
+/* TEXTAREA */
+textarea{
+    /* min-height:110px; */
+    resize:vertical;
+}
+
+/* BUTTON */
+.btn-submit{
+    width:100%;
+    padding:16px;
+    margin-top:35px;
+    background:#00b2a8;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.2s ease;
+}
+
+.btn-submit:hover{
+    background:#009c93;
+}
+
+/* SCROLLBAR (optional premium look) */
+.form-panel::-webkit-scrollbar {
+    width:8px;
+}
+
+.form-panel::-webkit-scrollbar-thumb {
+    background:#00b2a8;
+    border-radius:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+
+    body{
+        overflow:auto;
+    }
+
+    .main-wrapper{
+        flex-direction:column;
+        height:auto;
+    }
+
+    .brand-panel{
+        position:relative;
+        height:auto;
+    }
+
+    .form-panel{
+        height:auto;
+        overflow:visible;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:8px;
+    color:#333;
+}
+
+.full-width{
+    grid-column: span 2;
+}
+
+@media(max-width:992px){
+    .full-width{
+        grid-column: span 1;
+    }
+}
+
+/* Change Select2 hover & selected color to brand color */
+
+.select2-container--default 
+.select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: #00b2a8 !important;
+    color: #fff !important;
+}
+
+/* Selected item background in dropdown */
+.select2-container--default 
+.select2-results__option--selected {
+    background-color: #e6f7f6 !important;
+    color: #007d75 !important;
+}
+
+/* =========================
+   SELECT2 SINGLE (District)
+========================= */
+
+.select2-container--default .select2-selection--single {
+    height:48px !important;
+    border:1px solid #e1e1e1 !important;
+    border-radius:8px !important;
+    background:#f9fbfb !important;
+    display:flex !important;
+    align-items:center !important;
+    padding:0 14px !important;
+}
+
+/* Text alignment */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height:48px !important;
+    padding-left:0 !important;
+    color:#333;
+}
+
+/* Arrow alignment */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height:48px !important;
+}
+
+/* Focus style */
+.select2-container--default.select2-container--focus 
+.select2-selection--single {
+    border-color:#00b2a8 !important;
+    box-shadow:0 0 0 3px rgba(0,178,168,0.15) !important;
+    background:#ffffff !important;
+}
+
+/* =========================
+   SELECT2 MULTIPLE
+========================= */
+
+.select2-container--default .select2-selection--multiple {
+    min-height:48px !important;
+    border:1px solid #e1e1e1 !important;
+    border-radius:8px !important;
+    background:#f9fbfb !important;
+    padding:6px 12px !important;
+    display:flex !important;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+/* Focus */
+.select2-container--default.select2-container--focus 
+.select2-selection--multiple {
+    border-color:#00b2a8 !important;
+    box-shadow:0 0 0 3px rgba(0,178,168,0.15) !important;
+    background:#ffffff !important;
+}
+
+.select2-container--default 
+.select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: #00b2a8 !important;
+    color: #fff !important;
+}
+
+/* =========================
+   FORM MESSAGE STYLE
+========================= */
+
+.form-message{
+    padding:14px 18px;
+    border-radius:8px;
+    margin-top:25px;
+    font-size:14px;
+    font-weight:500;
+}
+
+.form-message.success{
+    background:#e6f7f6;
+    color:#007d75;
+    border:1px solid #00b2a8;
+}
+
+.form-message.error{
+    background:#fdeaea;
+    color:#b42318;
+    border:1px solid #f04438;
+}
+
+
